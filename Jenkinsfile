@@ -31,7 +31,7 @@ pipeline {
                     // Login to Docker Hub
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
                         // Push the Docker image to Docker Hub
-                        bat "docker push ${DOCKERHUB_REPO}:${IMAGE_TAG}"
+                        docker.image("${DOCKERHUB_REPO}:${IMAGE_TAG}").push();
                     }
                 }
             }
