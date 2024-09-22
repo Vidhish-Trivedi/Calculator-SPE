@@ -12,7 +12,7 @@ pipeline {
         stage('Unit Test') {
             steps {
                 // Run Maven unit tests
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image using the Dockerfile
-                    sh "docker build -t ${DOCKERHUB_REPO}:${IMAGE_TAG} ."
+                    bat "docker build -t ${DOCKERHUB_REPO}:${IMAGE_TAG} ."
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                     // Login to Docker Hub
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
                         // Push the Docker image to Docker Hub
-                        sh "docker push ${DOCKERHUB_REPO}:${IMAGE_TAG}"
+                        bat "docker push ${DOCKERHUB_REPO}:${IMAGE_TAG}"
                     }
                 }
             }
