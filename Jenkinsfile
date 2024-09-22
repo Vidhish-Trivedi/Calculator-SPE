@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Login to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
                         // Push the Docker image to Docker Hub
                         docker.image("${DOCKERHUB_REPO}:${IMAGE_TAG}").push();
                     }
