@@ -43,70 +43,73 @@ public class Main {
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("-------- Welcome to Calculator Program - SPE ---------");
-        System.out.println("");
-        System.out.println("-------- Please Enter the Operation Code: ------------");
-        System.out.println("1. Addition");
-        System.out.println("2. Multiplication");
-        System.out.println("3. Factorial");
-        System.out.println("4. Square_Root");
-        System.out.println("5. Exit");
+        while(true) {   
+            System.out.println("-------- Welcome to Calculator Program - SPE ---------");
+            System.out.println("");
+            System.out.println("-------- Please Enter the Operation Code: ------------");
+            System.out.println("1. Addition");
+            System.out.println("2. Multiplication");
+            System.out.println("3. Factorial");
+            System.out.println("4. Square_Root");
+            System.out.println("5. Exit");
 
-        System.out.println("");
+            System.out.println("");
 
-        int op = sc.nextInt();
+            int op = sc.nextInt();
 
-        if(op == 1)
-        {
-            System.out.print("Please Enter 2 numbers to be added: ");
+            if(op == 1)
+            {
+                System.out.print("Please Enter 2 numbers to be added: ");
 
-            double num1 = sc.nextDouble();
-            double num2 = sc.nextDouble();
+                double num1 = sc.nextDouble();
+                double num2 = sc.nextDouble();
 
-            double result = Add(num1, num2);
+                double result = Add(num1, num2);
 
-            System.out.println("The Final Result is : " + result);
-        }
-        else if(op == 2)
-        {
-            System.out.print("Please Enter 2 numbers to be Multiplied: ");
-
-            double num1 = sc.nextDouble();
-            double num2 = sc.nextDouble();
-
-            double result = Multiply(num1, num2);
-
-            System.out.println("The Final Result is : " + result);
-        }
-        else if(op == 3)
-        {
-            System.out.print("Please Enter integer whose factorial you want to calculate: ");
-
-            int num1 = sc.nextInt();
-
-            int result = Factorial(num1);
-
-            if(result == -1)
-                System.out.println("Please Enter valid non-negative Integer Input");
-            else
                 System.out.println("The Final Result is : " + result);
-        }
-        else if(op == 4)
-        {
-            System.out.print("Please Enter number whose Sqrt you want to calculate: ");
+            }
+            else if(op == 2)
+            {
+                System.out.print("Please Enter 2 numbers to be Multiplied: ");
 
-            double num1 = sc.nextDouble();
+                double num1 = sc.nextDouble();
+                double num2 = sc.nextDouble();
 
-            double result = Square_Root(num1);
+                double result = Multiply(num1, num2);
 
-            if(result == -1)
-                System.out.println("Please Enter valid Input >= 0");
-            else
                 System.out.println("The Final Result is : " + result);
-        }
-        else
-        {
-            System.out.println("Thanks for Using Calculator Program - BYE");
+            }
+            else if(op == 3)
+            {
+                System.out.print("Please Enter integer whose factorial you want to calculate: ");
+
+                int num1 = sc.nextInt();
+
+                int result = Factorial(num1);
+
+                if(result == -1)
+                    System.out.println("Please Enter valid non-negative Integer Input");
+                else
+                    System.out.println("The Final Result is : " + result);
+            }
+            else if(op == 4)
+            {
+                System.out.print("Please Enter number whose Sqrt you want to calculate: ");
+
+                double num1 = sc.nextDouble();
+
+                double result = Square_Root(num1);
+
+                if(result == -1)
+                    System.out.println("Please Enter valid Input >= 0");
+                else
+                    System.out.println("The Final Result is : " + result);
+            }
+            else
+            {
+                System.out.println("Thanks for Using Calculator Program - BYE");
+                break;
+            }
         }
 
         sc.close();
