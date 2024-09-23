@@ -12,7 +12,7 @@ pipeline {
         stage('Unit Test') {
             steps {
                 // Run Maven unit tests
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image using the Dockerfile
-                    bat "docker build -t ${DOCKERHUB_REPO}:${IMAGE_TAG} ."
+                    sh "docker build -t ${DOCKERHUB_REPO}:${IMAGE_TAG} ."
                 }
             }
         }
