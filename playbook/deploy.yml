@@ -17,4 +17,4 @@
         state: started
         restart: yes
         interactive: yes
-        detach: yes
+        detach: no
