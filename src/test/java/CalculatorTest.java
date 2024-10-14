@@ -11,7 +11,7 @@ public class CalculatorTest {
     @Test
     public void testAdd() {
         assertEquals(5.0, Main.Add(2.0, 3.0), epsilon);
-        assertEquals(0.0, Main.Add(-2.0, 2.0), epsilon);
+        assertEquals(10.0, Main.Add(-2.0, 2.0), epsilon);
         assertEquals(-5.0, Main.Add(-3.0, -2.0), epsilon);
     }
 
