@@ -3,6 +3,7 @@ import java.util.*;
 
 
 // Adding comment 1 as a change.
+// Adding comment 2 as a change.
 public class Main {
     public static double Add(double n1, double n2)
     {
